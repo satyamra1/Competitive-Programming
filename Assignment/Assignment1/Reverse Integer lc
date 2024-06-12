@@ -1,0 +1,17 @@
+class Solution {
+    public int reverse(int x) {
+   int max=Integer.MAX_VALUE;
+     long num=0;
+    int n=Math.abs(x);
+     while(n>0){
+        int rem=n%10;
+        num=num*10+rem;
+        n=n/10;
+     }
+     if(max<num) return 0;
+     if(x<0) return -1* (int) num;
+     else
+     return (int) num;
+
+    }
+}
