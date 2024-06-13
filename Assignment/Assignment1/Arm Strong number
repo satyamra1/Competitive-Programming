@@ -1,0 +1,23 @@
+class Solution {
+    static String armstrongNumber(int n){
+        
+      int[] cube = new int[10];
+        for (int i = 0; i < 10; i++) {
+            cube[i] = i * i * i;
+        }
+
+        int sum = 0;
+        int num = n;
+
+        while (n != 0) {
+            int digit = n % 10;
+            sum += cube[digit];
+            if (sum > num) { 
+                return "No";
+            }
+            n /= 10;
+        }
+
+        return (sum == num) ? "Yes" : "No";
+    }
+}
